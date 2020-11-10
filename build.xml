@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project name="ctrip" default="test" basedir=".">
+<!-- Define <testng> task -->
+  <taskdef name="testng" classname="org.testng.TestNGAntTask">
+    <classpath>
+      <pathelement location="libs/testng-6.9.6.jar"/>
+    </classpath>
+  </taskdef>
+   <property name="testdir" location="build" />
+   <property name="srcdir" location="src" />
+   <property name="libdir" location="libs" />
+   <property name="xmldir" location="src"/> 
+   <property name="full-compile" value="true" />
+   <path id="classpath.base"/>
+   <path id="classpath.test">
+
+       <fileset dir="${libdir}">
+         <include name="**/testng*.jar" />
+       	 <include name="*.jar" />
+      </fileset>
+   	 <fileset dir="${basedir}">
+   	        <include name="*.jar" />
+   	  </fileset>
+      <pathelement location="${testdir}" />
+      <pathelement location="${srcdir}" />
+      <path refid="classpath.base" />
+   </path>
+   <target name="clean" >
+      <delete verbose="${full-compile}">
+         <fileset dir="${testdir}" includes="**/*.class" />
+      </delete>
+   </target>
+   <target name="compile" depends="clean">
+      <javac srcdir="${srcdir}" destdir="${testdir}"
+         verbose="${full-compile}">
+         <classpath refid="classpath.test"/>
+      </javac>
+   </target>
+         <target name="test"  depends="compile">        	            	
+         	
+            <testng outputdir="${testdir}" classpathref="classpath.test"
+            	useDefaultListeners="false"
+            	haltonfailure="false"
+            	listeners="org.testng.reporters.FailedReporter, org.testng.reporters.TestHTMLReporter,org.testng.reporters.XMLReporter,
+           ">
+           <xmlfileset dir="${basedir}" includes="testng.xml"/>
+           </testng>
+   </target>   
+</project>
+
+

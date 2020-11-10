@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    
+  <listeners>
+      <listener class-name="com.orangelab.listener.AllureReporterListener" />
+  </listeners>
+    
+  <test name="192.168.30.101:5555">
+    <parameter name="port" value="4725"/>
+    <parameter name="platformVersion" value="7.1.1"/>
+    <parameter name="udid" value="192.168.30.101:5555"/> 
+    <parameter name="deviceName" value="Google Nexus 5X"/>   
+    <parameter name="systemPort" value="8201"/>
+    <classes>    
+      <!-- 号码登录 -->
+      <class name="com.orangelab.testcase.login.NumberLogin"/>   
+      <!-- 退出登录 -->   
+      <class name="com.orangelab.testcase.me.QuitLogin"/>
+      <!-- 游客登录 -->   
+      <class name="com.orangelab.testcase.login.GuestLogin"/>
+      <!-- 游客使用 -->   
+      <class name="com.orangelab.testcase.home.GuestUsed"/>
+    </classes>
+  </test>
+   
+</suite>

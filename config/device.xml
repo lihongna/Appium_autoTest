@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Device name="devicelist">
+  <deviceId id="0">
+    <deviceName>939ac677</deviceName>
+    <deviceVersion>7.1.1</deviceVersion>
+    <appiumPort>4723</appiumPort>
+  </deviceId>
+  <deviceId id="1">
+    <deviceName>4c94f2c7</deviceName>
+    <deviceVersion>6.0.1</deviceVersion>
+    <appiumPort>4724</appiumPort>
+  </deviceId>
+  <deviceId id="2">
+    <deviceName>192.168.30.101:5555</deviceName>
+    <deviceVersion>7.1.1</deviceVersion>
+    <appiumPort>4726</appiumPort>
+  </deviceId>
+</Device>

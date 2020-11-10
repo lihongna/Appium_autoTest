@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<param>
+    <udid name="192.168.30.101:5555">
+        <regNum>1000011</regNum>
+	    <pNum>1000001</pNum>	    
+	    <passWrod>111111</passWrod>	
+	</udid>	
+	<udid name="192.168.30.102:5555">
+        <regNum>2000001</regNum>
+	    <pNum>2000001</pNum>	    
+	    <passWrod>111111</passWrod>	
+	</udid>	
+</param>
